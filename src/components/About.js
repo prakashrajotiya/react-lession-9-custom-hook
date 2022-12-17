@@ -15,7 +15,7 @@ class AboutUs extends React.Component {
   render() {
     console.log("about render called");
     return (
-      <div>
+      <div className="pt-3">
         <h1> About Us Class Component</h1>
         <Outlet />
       </div>

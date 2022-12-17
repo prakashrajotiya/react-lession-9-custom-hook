@@ -1,5 +1,5 @@
 const MemberCard = (props) => {
-  console.log(props);
+  // console.log(props);
   const { avatar_url, login, public_repos } = props.member;
   return (
     <div className="membercard">

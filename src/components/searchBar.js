@@ -1,5 +1,4 @@
 import { useState } from "react";
-import data from "../constant/data.json";
 
 const SearchBar = ({ memberList, setmemberData }) => {
   // input search var
@@ -23,7 +22,7 @@ const SearchBar = ({ memberList, setmemberData }) => {
           setsearchValue(e.target.value);
         }}
       />
-      <button>Submit</button>
+      <button>Search</button>
     </form>
   );
 };

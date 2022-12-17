@@ -14,9 +14,9 @@ const MemberDetail = () => {
     setuserInfo(data);
   }
   return (
-    <div style={{ width: "500px" }}>
+    <div className="pt-3">
       <h1>{userInfo.name} Detail</h1>
-      <img src={userInfo.avatar_url}></img>
+      <img className="img-fluid" src={userInfo.avatar_url}></img>
       <h3>Name : {userInfo.name}</h3>
       <h3>public Repository : {userInfo.public_repos}</h3>
       <h3>Last Updated : {userInfo.updated_at}</h3>

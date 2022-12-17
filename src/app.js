@@ -1,13 +1,17 @@
 import ReactDOM from "react-dom/client";
-import AboutUs from "./components/About";
 import MemberDetail from "./components/memberDetail";
 import Header from "./components/Header";
-import Search from "./components/Member";
 import Home from "./components/Home";
 import "./app.css";
 import Profile from "./components/Profile";
-import { Outlet } from "react";
+import { lazy, Outlet, Suspense } from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Error from "./components/Error";
+import Loader from "./components/loader";
+
+const AboutUs = lazy(() => import("./components/About"));
+const Search = lazy(() => import("./components/Search"));
+const MemberDetail = lazy(() => import("./components/MemberDetail"));
 const Main = () => {
   return (
     <div className="main">
@@ -23,13 +27,32 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <Error />,
     children: [
-      { path: "", element: <Home /> },
-      { path: "search", element: <Search /> },
-      { path: "member/:login", element: <MemberDetail /> },
+      // { path: "", element: <Search /> },
+      {
+        path: "",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Search />
+          </Suspense>
+        ),
+      },
+      {
+        path: "member/:login",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <MemberDetail />
+          </Suspense>
+        ),
+      },
       {
         path: "about",
-        element: <AboutUs />,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <AboutUs />
+          </Suspense>
+        ),
         children: [
           {
             path: "",

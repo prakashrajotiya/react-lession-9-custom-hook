@@ -34,7 +34,11 @@ class Profile extends Component {
     console.log("profile render called");
     return (
       <>
-        <img src={avatar_url} style={{ width: "200px" }} />
+        <img
+          src={avatar_url}
+          loading="lazy"
+          style={{ width: "200px", height: "200px" }}
+        />
         <div>{this.props.name}</div>
         <div>{bio}</div>
       </>

@@ -8,6 +8,12 @@ a {
 header a {
   color: #fff;
   margin-left: 15px;
+  text-decoration: none;
+}
+header a:hover,
+header a:focus {
+  color: #fff;
+  /* text-decoration: none; */
 }
 header {
   padding: 15px;
@@ -65,8 +71,10 @@ body {
 }
 
 input {
-  width: 50%;
+  width: 70%;
   max-width: 600px;
+  background-color: #fff;
+  border: 1px solid #3d4070;
 }
 input,
 button {
@@ -74,15 +82,48 @@ button {
   min-height: 50px;
   /* border-radius: 4px; */
   font-size: 16px;
-  border: none;
   outline: none;
 }
 button {
+  border: none;
   cursor: pointer;
+  background-color: #3d4070;
+  color: #fff !important;
 }
 .searchform {
-  background-color: #3d4070;
+  /* background-color: #3d4070; */
   padding: 10px;
   text-align: center;
   margin: 0 -15px;
+}
+.loader-container {
+  background-color: rgba(255, 255, 255, 0.2);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loading {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #3d407038;
+  border-top-color: #3d4070;
+  border-radius: 50%;
+  animation: 1s ease-in-out infinite spin;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
