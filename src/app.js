@@ -9,7 +9,7 @@ import Loader from "./components/loader";
 
 const AboutUs = lazy(() => import("./components/About"));
 const Search = lazy(() => import("./components/Search"));
-const MemberDetail = lazy(() => import("./components/MemberDetail"));
+const MemberDetail = lazy(() => import("./components/memberDetail"));
 const Main = () => {
   return (
     <div className="main">
