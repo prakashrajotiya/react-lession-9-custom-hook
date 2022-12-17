@@ -1,7 +1,5 @@
 import ReactDOM from "react-dom/client";
-import MemberDetail from "./components/memberDetail";
 import Header from "./components/Header";
-import Home from "./components/Home";
 import "./app.css";
 import Profile from "./components/Profile";
 import { lazy, Outlet, Suspense } from "react";
